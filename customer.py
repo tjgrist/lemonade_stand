@@ -5,29 +5,26 @@ from vendor import Vendor
 class Customer:
 
 	def __init__(self):
-		self.impulse
+		self.chance = randint(1,100)
+		#if weather is bad self.chance -= 20
 
 
-	def buy(self,price,temp,cloudiness):
+
+	def buy(self,vendor,weather_score):
 		#find more efficient way to do this
+		price = vendor
+		print("lemonade cost: ",price)
 		randomize = randint(1,10)
-		if price <= 1 and temp >= 90 and cloudiness == "sunny" and randomize >= 2:
+		if weather_score + price >= 100:
 			print("Yum!")
 			return price
-		if price <= 1 and temp >= 80 and cloudiness == "sunny" and randomize >= 3:
+		if weather_score >= 90:
 			print("Refreshing!")
 			return price
-		if price <= 1 and temp >= 70 and cloudiness == "sunny" and randomize >= 4:
-			print("Good!")
-			return price
-		if price <= 1 and temp >= 60 and cloudiness == "sunny" and randomize >= 6:
-			print("Chilly but good.")
-			return price
-		if price == 2 and temp is 90 and cloudiness == "sunny" and randomize >= 4:
-			print("Good.")
-			return price
-		if price == 2 and temp >=
 		else:
 			print("Not buying today.")
+
+	def get_num_customers(self):
+		print()
 
 
