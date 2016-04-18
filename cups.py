@@ -1,0 +1,2 @@
+class Cups(supplies):
+	

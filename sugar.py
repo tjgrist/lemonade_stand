@@ -1,0 +1,2 @@
+class Sugar(supplies):
+	
