@@ -11,13 +11,16 @@ customer = Customer()
 
 
 
-vendor.make_supplies_list()
+
 
 #game flow:
 #should have a main loop through all customers
+
 week = 0
 while week < 7:
-	#show weather
+	#show supplies
+	vendor.make_supplies_list()
+	#show day's weather
 	print("Weather:",today.get_temp(),"and",today.get_cloudiness())
 	print("weather score: ",today.weather_score)
 
@@ -27,6 +30,7 @@ while week < 7:
 	vendor.buy_ice()
 	vendor.buy_cups()
 	vendor.make_supplies_list()
+	vendor.set_price()
 	#make lemonade recipe
 
 

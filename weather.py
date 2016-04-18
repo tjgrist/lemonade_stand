@@ -16,7 +16,7 @@ class Weather:
 
 	def get_temp(self):
 		temp = randint(60,100)
-		self.weather_score += temp
+		self.weather_score = temp
 		return temp
 
 	def get_cloudiness(self):

@@ -1,4 +1,8 @@
 from supplies import Supplies 
+from lemons import Lemons 
+
+cash = Money()
+lemons = Lemons()
 
 class Vendor:
 
@@ -15,25 +19,32 @@ class Vendor:
 
 
 	def buy_lemons(self):
-		print("You can buy 10, 25, or 60 lemons at a time.")
+		print("\nYou can buy 10, 25, or 60 lemons at a time.")
 		lemons_quantity = int(input("Enter how many lemons you need: "))
 		#add try/except
+		if lemons_quantity == 10:
+			cash.subtract_money(lemons.price_10)
+		elif lemons_quantity == 25:
+			cash.subtract_money(lemons.price_25)
+		elif lemons_quantity == 60:
+			cash.subtract_money(lemons.price_60)
 		self.lemons_quantity += lemons_quantity
 
+		
 	def buy_sugar(self):
-		print("You can buy 10, 25, or 60 cups of sugar at a time.")
+		print("\nYou can buy 10, 25, or 60 cups of sugar at a time.")
 		sugar_quantity = int(input("Enter how much sugar you need: "))
 		#add try/except
 		self.sugar_quantity += sugar_quantity
 
 	def buy_ice(self):
-		print("You can buy 100, 250, or 500 ice cubes at time.")
+		print("\nYou can buy 100, 250, or 500 ice cubes at time.")
 		ice_quantity = int(input("Enter how many cubes you need: "))
 		#add try/except
 		self.ice_quantity += ice_quantity
 
 	def buy_cups(self):
-		print("You can buy 10, 25, or 60 cups at time.")
+		print("\nYou can buy 10, 25, or 60 cups at time.")
 		cups_quantity = int(input("Enter how many you need: "))
 		#add try/except
 		self.cups_quantity += cups_quantity

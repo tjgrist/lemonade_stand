@@ -10,9 +10,8 @@ class Customer:
 
 
 
-	def buy(self,vendor,weather_score):
+	def buy(self,price,weather_score):
 		#find more efficient way to do this
-		price = vendor
 		print("lemonade cost: ",price)
 		randomize = randint(1,10)
 		if weather_score + price >= 100:
