@@ -17,6 +17,7 @@ class Supplies:
 		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
 			return True
 		else:
+			print("You don't have enough ingredients!")
 			return False
 
 	def get_profits(self,cash):

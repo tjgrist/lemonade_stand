@@ -83,7 +83,7 @@ class Vendor:
 		print("qua:",supplies.cups)
 
 
-	def make_lemonade(self):
+	def craft_lemonade(self):
 		default_recipe = 12
 		print("The default recipe is 4 lemons/pitcher, 4 cups sugar/pitcher, and 4 ice cubes/pitcher.")
 		alter = input("Would you like to change it? ").lower().replace(" ","")
@@ -104,8 +104,8 @@ class Vendor:
 		ice = supplies.ice
 		cups = supplies.cups
 		supplies.show_supplies_list(lemons,sugar,ice,cups)
-		
-def sell(self,price):
+
+	def sell(self,price):
 		price = price 
 
 	def buy_more(self):

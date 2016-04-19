@@ -3,14 +3,16 @@ from weather import Weather
 from customer import Customer 
 from money import Money 
 from supplies import Supplies
+from lemonade import Lemonade 
 
 vendor = Vendor()
 today = Weather()
 cash = Money()
 supplies = Supplies()
+lemonade = Lemonade()
 
 #customers:
-jon = Customer()
+jon = Customer() 
 ned = Customer()
 loris = Customer()
 arya = Customer()
@@ -40,11 +42,20 @@ def main():
 		vendor.buy_ice(cash,supplies)
 		vendor.buy_cups(cash,supplies)
 		vendor.make_supplies_list(supplies)
+		
+		lemonade.make_lemonade(supplies.lemons,supplies.sugar,supplies.ice,supplies.cups)#How much lemonade I can make 
+		supplies.check_supplies()
+
 		vendor.set_price()
+
 		#make lemonade recipe *could worry about this later and leave default
+
+		
+		
 
 		#sell and earn 
 		#each customer's purchase should subtract ingredients and add money
+		#make this a customer flow function
 		jon.buy(vendor.price, cash, today.weather_score, supplies, vendor)
 		ned.buy(vendor.price, cash, today.weather_score, supplies, vendor)
 		loris.buy(vendor.price, cash, today.weather_score,supplies, vendor)
@@ -57,7 +68,7 @@ def main():
 		joffrey .buy(vendor.price, cash, today.weather_score, supplies, vendor)
 		reek.buy(vendor.price, cash, today.weather_score, supplies, vendor)
 
-		print("\nLet's see how you did today.\nCash in hand:",cash.dollars)
+		print("\nLet's see how you did today.\nCash in hand: ${}".format(cash.dollars))
 		print("\nTotal profits: ${}\n".format(supplies.get_profits(cash.dollars)))
 
 		week += 1

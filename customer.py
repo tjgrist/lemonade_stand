@@ -11,7 +11,6 @@ class Customer:
 		#if weather is bad self.chance -= 20
 
 
-
 	def buy(self,price,cash,weather_score,supplies,vendor):
 		print("lemonade cost: $",price)
 		print("Customer chance:",self.chance)
@@ -51,7 +50,7 @@ class Customer:
 			print("\nYou're out of some ingredients!")
 			vendor.make_supplies_list()
 
-	def get_num_customers(self):
+	def get_customers(self):
 		print()
 		if weather_score >= 90:
 			print()
