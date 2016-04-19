@@ -33,7 +33,7 @@ def main():
 		#show supplies
 		vendor.make_supplies_list(supplies)
 		#show day's weather
-		print("Weather:",today.get_temp(),"and",today.get_cloudiness())
+		print("\nToday's forecast:",today.get_temp(),"and",today.get_cloudiness())
 		print("weather score: ",today.weather_score)
 
 		#buy ingredients -- make this one function vendor.buy_stuff(cash,supplies)
@@ -50,18 +50,11 @@ def main():
 		# while supplies.check_supplies():
 		# 	break
 		# else: vendor.buy_stuff(cash,supplies)
-
-				
-
 		vendor.set_price()
 
 		#make lemonade recipe *could worry about this later and leave default
 
-		
-		
-
 		#sell and earn 
-		#each customer's purchase should subtract ingredients and add money
 		#make this a customer flow function
 		jon.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 		ned.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
@@ -75,8 +68,7 @@ def main():
 		joffrey .buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 		reek.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 
-		#How to subtract ingredients used:
-		#subtract lemonade "drinks" made from the day, and subtract ice.
+		
 		supplies.subtract_supplies(lemonade.drinks)
 
 		print("\nLet's see how you did today.\nCash in hand: ${}".format(cash.dollars))
@@ -85,3 +77,6 @@ def main():
 		day += 1
 
 main()
+
+#To do tmrw: make sure supply flow works well/is realistic.
+#subtract lemonade "drinks" made from the day, and subtract ice.f

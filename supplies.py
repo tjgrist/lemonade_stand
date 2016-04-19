@@ -1,8 +1,6 @@
 from lemonade import Lemonade 
 from money import Money 
 
-
-
 class Supplies:
 
 	def __init__(self):
@@ -10,6 +8,8 @@ class Supplies:
 		self.sugar = 0
 		self.ice = 0
 		self.cups = 0
+		self.pitchers_ready = 0
+
 
 	def show_supplies_list(self,lemons,sugar,ice,cups):
 		print("\nYou have:")
@@ -18,16 +18,19 @@ class Supplies:
 		print("Ice: ",self.ice)
 		print("Cups: ",self.cups)
 
+
 	def check_supplies(self,vendor):
 		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
 			return True
 		else:
 			print("You don't have enough ingredients!")
-			vendor.buy_stuff(cash.dollars,self.supplies) #error s
+			vendor.buy_stuff(cash.dollars,self.supplies) #error
+
 
 	def get_profits(self,cash):
 		return cash - 20
 
+#could maybe make these into one method:
 	def add_lemons(self,num):
 		if num == 10:
 			self.lemons += 10
@@ -60,13 +63,14 @@ class Supplies:
 		elif num == 60:
 			self.cups += 60
 
+
 	def subtract_supplies(self,drinks):
 		
-			self.lemons -= self.lemons*0.25
-			self.sugar -= self.sugar*0.25
+			self.lemons -= self.lemons*0.3
+			self.sugar -= self.sugar*0.3
 			self.cups -= drinks
 			self.ice -= self.ice
-			print("\n Oh no! You're ice melted. Be sure to get some more.")
+			print("\nOh no! You're ice melted. Be sure to get some more.")
 			
 
 

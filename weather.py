@@ -8,16 +8,12 @@ class Weather:
 		self.weather_score = 0
 		#self.cloudiness = False
 	
-	def get_day(self):
-		for days in range(7):
-			self.day = "Monday"
-			print(self.day) 
-			break
 
 	def get_temp(self):
 		temp = randint(60,100)
 		self.weather_score = temp
 		return temp
+
 
 	def get_cloudiness(self):
 		cloudiness = randint(1,3)
@@ -32,5 +28,9 @@ class Weather:
 			return "rainy"
 
 
-
+	def get_day(self):
+		for days in range(7):
+			self.day = "Monday"
+			print(self.day) 
+			break
 

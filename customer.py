@@ -12,60 +12,79 @@ class Customer:
 
 
 	def buy(self,price,cash,weather_score,supplies,vendor,lemonade):
-		print("lemonade cost: $",price)
-		print("Customer chance:",self.chance)
+		print("Customer chance:",self.chance) #delete these items when done with project
 
 		if supplies.check_supplies(vendor) == True:
 
 			if weather_score >= 100 and self.chance >= 10 and price <= 3:
-				print(self.customer_says(),"Yum!")
+				self.customer_says()
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
 			elif weather_score >= 90 and self.chance >= 20 and price <= 2:
-				print(self.customer_says(),"Refreshing!")
+				self.customer_says()
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
 			elif weather_score >= 80 and self.chance >= 30 and price <= 2: 
-				print(self.customer_says(),"Good Lemonade")
+				self.customer_says()
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
-			elif weather_score >= 70 and self.chance >= 40 and price <=1:
-				print(self.customer_says(),"Too cold but tasty.")
+			elif weather_score >= 70 and self.chance >= 40 and price <=2:
+				self.customer_says()
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
 			elif weather_score >= 60 and self.chance >= 50 and price <=1: 
-				print(self.customer_says(),"Chilly, but pretty good.")	
+				self.customer_says()
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
-			elif weather_score >= 50 and self.chance >= 40 and price <= 1:
-				print(self.customer_says(),"It's too cold, but the sugar warms me up.")	
+			elif weather_score >= 40 and self.chance >= 50 and price <= 1:
+				print("Customer says:\n'It's too cold, but the sugar warms me up.'"	)
 				cash.add_money(price)
 				lemonade.subtract_drink()
-				print("lemonade available: ",lemonade.drinks)
+				lemonade.get_lemonades()
 
 			else:
-				print(self.customer_says(),"Not buying today.")
-				print("Cash in hand:",cash.dollars)
+				print("Customer says:\n'Not buying today.'")
+				print("\nCash in hand:",cash.dollars)
 
 		else: 
 			print("\nYou're out of some ingredients!")
 			vendor.make_supplies_list(supplies)
 
 	def get_customers(self):
-		print()
-		if weather_score >= 90:
-			print()
+		customers_out = None
+		jon.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		ned.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		loris.buy(vendor.price, cash, today.weather_score,supplies, vendor,lemonade)
+		arya.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		denaerys.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		rob.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		dracon.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		greyworm.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		jamie.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		joffrey .buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		reek.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 
 	def customer_says(self):
-		print("\nCustomer says:")
+		response = randint(1,5)
+		if response == 1:
+			response = "'Yum!'"
+		elif response == 2:
+			response = "'Refreshing!'"
+		elif response == 3:
+			response = "'Good Lemonade.'"
+		elif response == 4:
+			response = "'Too cold but tasty.'"
+		elif response == 5:
+			response = "'Yummy lemonade.'"	
+		print("\nYou got a customer! They say:",response)
 
