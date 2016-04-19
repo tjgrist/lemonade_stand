@@ -13,19 +13,40 @@ class Customer:
 
 	def buy(self,price,cash,weather_score):
 		print("lemonade cost: ",price)
-		randomize = randint(1,10)
 		if weather_score + price >= 100:
-			print("Yum!")
+			print(self.customer_says(),"Yum!")
 			cash.add_money(price)
-			print("cash:",cash.dollars)
-		if weather_score >= 90:
-			print("Refreshing!")
+			print("Cash in hand:",cash.dollars)
+
+		elif weather_score >= 90:
+			print(self.customer_says(),"Refreshing!")
 			cash.add_money(price)
-			print("cash:",cash.dollars)
+			print("Cash in hand:",cash.dollars)
+
+		elif weather_score >= 80: 
+			print(self.customer_says(),"Good Lemonade")
+			cash.add_money(price)
+			print("Cash in hand:",cash.dollars)
+
+		elif weather_score >= 70:
+			print(self.customer_says(),"Too cold but tasty.")
+			cash.add_money(price)
+			print("Cash in hand:",cash.dollars)
+
+		elif weather_score >= 60: 
+			print(self.customer_says(),"Chilly, but pretty good.")	
+			cash.add_money(price)
+			print("Cash in hand:",cash.dollars)
+
 		else:
-			print("Not buying today.")
+			print(self.customer_says(),"Not buying today.")
+			print("Cash in hand:",cash.dollars)
 
 	def get_num_customers(self):
 		print()
+		if weather_score >= 90:
+			print()
 
+	def customer_says(self):
+		print("\nCustomer says:")
 

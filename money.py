@@ -5,8 +5,8 @@ class Money:
 
 	def add_money(self,dollars):
 		self.dollars += dollars
-		print(self.dollars)
+		print("Cash:",self.dollars)
 
 	def subtract_money(self,dollars):
 		self.dollars -= dollars
-		print(self.dollars)
+		print("Cash:",self.dollars)
