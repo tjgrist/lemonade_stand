@@ -1,6 +1,6 @@
 class Ice(supplies):
 
 	def __init__(self):
-		self.price_10 = 1
-		self.price_25 = 2
-		self.price_60 = 5
+		self.price_100 = 1
+		self.price_250 = 2
+		self.price_500 = 5

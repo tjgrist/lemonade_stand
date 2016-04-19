@@ -1,11 +1,9 @@
 from vendor import Vendor 
 from weather import Weather 
 from customer import Customer 
-from supplies import Supplies 
 
 vendor = Vendor()
 today = Weather()
-customer = Customer()
 
 
 

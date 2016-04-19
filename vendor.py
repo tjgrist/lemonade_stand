@@ -3,6 +3,9 @@ from lemons import Lemons
 
 cash = Money()
 lemons = Lemons()
+sugar = Sugar()
+ice = Ice()
+cups = Cups()
 
 class Vendor:
 
@@ -19,7 +22,7 @@ class Vendor:
 
 
 	def buy_lemons(self):
-		print("\nYou can buy 10, 25, or 60 lemons at a time.")
+		print("\nBuy some lemons! You can buy 10 at $1, 25 at $2, or 60 at $5.")
 		lemons_quantity = int(input("Enter how many lemons you need: "))
 		#add try/except
 		if lemons_quantity == 10:
@@ -30,24 +33,44 @@ class Vendor:
 			cash.subtract_money(lemons.price_60)
 		self.lemons_quantity += lemons_quantity
 
-		
+
 	def buy_sugar(self):
-		print("\nYou can buy 10, 25, or 60 cups of sugar at a time.")
+		print("\nBuy some sugar! You can buy 10 cups at $1, 25 at $2, or 60 at $5.")
 		sugar_quantity = int(input("Enter how much sugar you need: "))
 		#add try/except
+		if sugar_quantity == 10:
+			cash.subtract_money(sugar.price_10)
+		elif sugar_quantity == 25:
+			cash.subtract_money(sugar.price_25)
+		elif sugar_quantity == 60:
+			cash.subtract_money(sugar.price_60)
 		self.sugar_quantity += sugar_quantity
 
+
 	def buy_ice(self):
-		print("\nYou can buy 100, 250, or 500 ice cubes at time.")
+		print("\nBuy some ice! You can buy 100 cubes at $1, 250 at $2, or 500 at $5.")
 		ice_quantity = int(input("Enter how many cubes you need: "))
 		#add try/except
+		if ice_quantity == 10:
+			cash.subtract_money(ice.price_100)
+		elif ice_quantity == 25:
+			cash.subtract_money(ice.price_250)
+		elif ice_quantity == 60:
+			cash.subtract_money(ice.price_500)
 		self.ice_quantity += ice_quantity
 
 	def buy_cups(self):
-		print("\nYou can buy 10, 25, or 60 cups at time.")
+		print("\nYou can buy 10 at $1, 25 at $2, or 60 at $5 cups at time.")
 		cups_quantity = int(input("Enter how many you need: "))
 		#add try/except
+		if cups_quantity == 10:
+			cash.subtract_money(cups.price_10)
+		elif cups_quantity == 25:
+			cash.subtract_money(cups.price_25)
+		elif cups_quantity == 60:
+			cash.subtract_money(cups.price_60)
 		self.cups_quantity += cups_quantity
+
 
 	def make_lemonade(self):
 		default_recipe = 12
