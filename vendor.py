@@ -1,4 +1,4 @@
-from supplies import Supplies 
+# from supplies import Supplies 
 from lemons import Lemons 
 from sugar import Sugar
 from ice import Ice 
@@ -18,11 +18,11 @@ class Vendor:
 
 		self.price = 0
 
-	# def buy_stuff(self,cash,supplies,vendor):
-	# 	self.buy_lemons(cash,supplies)
-	# 	self.buy_sugar(cash,supplies)
-	# 	self.buy_ice(cash,supplies)
-	# 	self.buy_cups(cash,supplies)
+	def buy_stuff(self,cash,supplies,vendor):
+		self.buy_lemons(cash,supplies)
+		self.buy_sugar(cash,supplies)
+		self.buy_ice(cash,supplies)
+		self.buy_cups(cash,supplies)
 
 	def buy_lemons(self,cash,supplies):
 		print("\nBuy some lemons! You can buy 10 at $1, 25 at $2, or 60 at $5.")
@@ -37,8 +37,6 @@ class Vendor:
 		elif lemons_quantity == 60:
 			cash.subtract_money(lemons.price_60)
 			supplies.add_lemons(lemons_quantity)
-		print("qua:",supplies.lemons)
-
 
 	def buy_sugar(self,cash,supplies):
 		print("\nBuy some sugar! You can buy 10 cups at $1, 25 at $2, or 60 at $5.")
@@ -53,8 +51,6 @@ class Vendor:
 		elif sugar_quantity == 60:
 			cash.subtract_money(sugar.price_60)
 			supplies.add_sugar(sugar_quantity)
-		print("qua:",supplies.sugar)
-
 
 	def buy_ice(self,cash,supplies):
 		print("\nBuy some ice! You can buy 100 cubes at $1, 250 at $2, or 500 at $5.")
@@ -69,8 +65,6 @@ class Vendor:
 		elif ice_quantity == 500:
 			cash.subtract_money(ice.price_500)
 			supplies.add_ice(ice_quantity)
-		print("qua:",supplies.ice)
-
 
 	def buy_cups(self,cash,supplies):
 		print("\nYou can buy 10 at $1, 25 at $2, or 60 at $5 cups at time.")
@@ -85,7 +79,6 @@ class Vendor:
 		elif cups_quantity == 60:
 			cash.subtract_money(cups.price_60)
 			supplies.add_cups(cups_quantity)
-		print("qua:",supplies.cups)
 
 
 	def craft_lemonade(self):

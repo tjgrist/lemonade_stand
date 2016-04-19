@@ -2,6 +2,7 @@ from lemonade import Lemonade
 from money import Money 
 
 
+
 class Supplies:
 
 	def __init__(self):
@@ -17,12 +18,12 @@ class Supplies:
 		print("Ice: ",self.ice)
 		print("Cups: ",self.cups)
 
-	def check_supplies(self):
+	def check_supplies(self,vendor):
 		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
 			return True
 		else:
 			print("You don't have enough ingredients!")
-			vendor.buy_stuff(cash.dollars,self.supplies)
+			vendor.buy_stuff(cash.dollars,self.supplies) #error s
 
 	def get_profits(self,cash):
 		return cash - 20
@@ -60,14 +61,13 @@ class Supplies:
 			self.cups += 60
 
 	def subtract_supplies(self,drinks):
-		if drinks <= 0:
-			self.lemons -= self.lemons
-			self.sugar -= self.sugar
+		
+			self.lemons -= self.lemons*0.25
+			self.sugar -= self.sugar*0.25
+			self.cups -= drinks
 			self.ice -= self.ice
-			self.cups -= self.cups
-		else: 
-			print("You're ice melted.")
-			self.ice -= self.ice
+			print("\n Oh no! You're ice melted. Be sure to get some more.")
+			
 
 
 

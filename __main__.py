@@ -28,8 +28,8 @@ reek = Customer()
 #game flow:
 #should have a main loop through all customers
 def main():
-	week = 0
-	while week < 7:
+	day = 0
+	while day < 7:
 		#show supplies
 		vendor.make_supplies_list(supplies)
 		#show day's weather
@@ -78,9 +78,10 @@ def main():
 		#How to subtract ingredients used:
 		#subtract lemonade "drinks" made from the day, and subtract ice.
 		supplies.subtract_supplies(lemonade.drinks)
+
 		print("\nLet's see how you did today.\nCash in hand: ${}".format(cash.dollars))
 		print("\nTotal profits: ${}\n".format(supplies.get_profits(cash.dollars)))
 
-		week += 1
+		day += 1
 
 main()
