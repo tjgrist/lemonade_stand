@@ -18,6 +18,11 @@ class Vendor:
 
 		self.price = 0
 
+	# def buy_stuff(self,cash,supplies,vendor):
+	# 	self.buy_lemons(cash,supplies)
+	# 	self.buy_sugar(cash,supplies)
+	# 	self.buy_ice(cash,supplies)
+	# 	self.buy_cups(cash,supplies)
 
 	def buy_lemons(self,cash,supplies):
 		print("\nBuy some lemons! You can buy 10 at $1, 25 at $2, or 60 at $5.")
@@ -108,10 +113,13 @@ class Vendor:
 	def sell(self,price):
 		price = price 
 
-	def buy_more(self):
-		answer = input("Would you like to buy more ingredients? ")
+	def buy_more(self,cash,supplies):
+		answer = input("Would you like to buy more ingredients? ").lower().replace(" ","")
 		if answer == "yes":
-			ingredient = input("Which ingredient")
+			self.buy_lemons(cash,supplies)
+			self.buy_sugar(cash,supplies)
+			self.buy_ice(cash,supplies)
+			self.buy_cups(cash,supplies)
 
 
 	# def change_price(self):

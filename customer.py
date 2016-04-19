@@ -11,7 +11,7 @@ class Customer:
 		#if weather is bad self.chance -= 20
 
 
-	def buy(self,price,cash,weather_score,supplies,vendor):
+	def buy(self,price,cash,weather_score,supplies,vendor,lemonade):
 		print("lemonade cost: $",price)
 		print("Customer chance:",self.chance)
 
@@ -20,26 +20,31 @@ class Customer:
 			if weather_score >= 100 and self.chance >= 10 and price <= 3:
 				print(self.customer_says(),"Yum!")
 				cash.add_money(price)
+				lemonade.drinks - 1
 				print("Cash in hand:",cash.dollars)
 
 			elif weather_score >= 90 and self.chance >= 20 and price <= 2:
 				print(self.customer_says(),"Refreshing!")
 				cash.add_money(price)
+				lemonade.drinks - 1
 				print("Cash in hand:",cash.dollars)
 
 			elif weather_score >= 80 and self.chance >= 30 and price <= 2: 
 				print(self.customer_says(),"Good Lemonade")
 				cash.add_money(price)
+				lemonade.drinks - 1
 				print("Cash in hand:",cash.dollars)
 
 			elif weather_score >= 70 and self.chance >= 40 and price <=1:
 				print(self.customer_says(),"Too cold but tasty.")
 				cash.add_money(price)
+				lemonade.drinks - 1
 				print("Cash in hand:",cash.dollars)
 
 			elif weather_score >= 60 and self.chance >= 50 and price <=1: 
 				print(self.customer_says(),"Chilly, but pretty good.")	
 				cash.add_money(price)
+				lemonade.drinks - 1
 				print("Cash in hand:",cash.dollars)
 
 			else:
@@ -48,7 +53,7 @@ class Customer:
 
 		else: 
 			print("\nYou're out of some ingredients!")
-			vendor.make_supplies_list()
+			vendor.make_supplies_list(supplies)
 
 	def get_customers(self):
 		print()
