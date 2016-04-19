@@ -1,5 +1,9 @@
 from supplies import Supplies 
 from lemons import Lemons 
+from sugar import Sugar
+from ice import Ice 
+from cups import Cups
+from money import Money
 
 cash = Money()
 lemons = Lemons()
@@ -51,11 +55,11 @@ class Vendor:
 		print("\nBuy some ice! You can buy 100 cubes at $1, 250 at $2, or 500 at $5.")
 		ice_quantity = int(input("Enter how many cubes you need: "))
 		#add try/except
-		if ice_quantity == 10:
+		if ice_quantity == 100:
 			cash.subtract_money(ice.price_100)
-		elif ice_quantity == 25:
+		elif ice_quantity == 250:
 			cash.subtract_money(ice.price_250)
-		elif ice_quantity == 60:
+		elif ice_quantity == 500:
 			cash.subtract_money(ice.price_500)
 		self.ice_quantity += ice_quantity
 

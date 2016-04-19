@@ -1,4 +1,6 @@
-class Ice(supplies):
+from supplies import Supplies 
+
+class Ice(Supplies):
 
 	def __init__(self):
 		self.price_100 = 1

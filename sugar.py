@@ -1,4 +1,6 @@
-class Sugar(supplies):
+from supplies import Supplies 
+
+class Sugar(Supplies):
 
 	def __init__(self):
 		self.price_10 = 1

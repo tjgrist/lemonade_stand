@@ -1,6 +1,7 @@
 from lemonade import Lemonade
 from random import randint 
 from vendor import Vendor
+from money import Money 
 
 class Customer:
 
@@ -10,15 +11,17 @@ class Customer:
 
 
 
-	def buy(self,price,weather_score):
+	def buy(self,price,cash,weather_score):
 		print("lemonade cost: ",price)
 		randomize = randint(1,10)
 		if weather_score + price >= 100:
 			print("Yum!")
-			return price
+			cash.add_money(price)
+			print("cash:",cash.dollars)
 		if weather_score >= 90:
 			print("Refreshing!")
-			return price
+			cash.add_money(price)
+			print("cash:",cash.dollars)
 		else:
 			print("Not buying today.")
 
