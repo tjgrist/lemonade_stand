@@ -18,14 +18,19 @@ class Vendor:
 		self.price = 0
 
 	def buy_stuff(self,cash,supplies,vendor):
-		self.buy_lemons(cash,supplies)
-		self.buy_sugar(cash,supplies)
-		self.buy_ice(cash,supplies)
-		self.buy_cups(cash,supplies)
+		if supplies.check_supplies(vendor,cash,supplies) == True:
+			pass
+		else: 
+			print("\nYou're out of some ingredients!\n")
+			# self.buy_stuff(cash, supplies, vendor)
+			self.buy_lemons(cash,supplies)
+			self.buy_sugar(cash,supplies)
+			self.buy_ice(cash,supplies)
+			self.buy_cups(cash,supplies)
 
-	#can I combine these?
+		
 	def buy_lemons(self,cash,supplies):
-		print("\nBuy some lemons! You can buy 10 @ $1, 25 @ $2, or 60 @ $5.")
+		print("\nBuy some lemons! You can buy 10 @ $2, 25 @ $4, or 60 @ $7.")
 		lemons_quantity = int(input("Enter how many lemons you need: "))
 		#add try/except
 		if lemons_quantity == 10:
@@ -39,7 +44,7 @@ class Vendor:
 			supplies.add_lemons(lemons_quantity)
 
 	def buy_sugar(self,cash,supplies):
-		print("\nBuy some sugar! You can buy 10 cups @ $1, 25 @ $2, or 60 @ $5.")
+		print("\nBuy some sugar! You can buy 10 cups @ $2, 25 @ $4, or 60 @ $7.")
 		sugar_quantity = int(input("Enter how much sugar you need: "))
 		#add try/except
 		if sugar_quantity == 10:
@@ -53,7 +58,7 @@ class Vendor:
 			supplies.add_sugar(sugar_quantity)
 
 	def buy_ice(self,cash,supplies):
-		print("\nBuy some ice! You can buy 100 cubes @ $1, 250 @ $2, or 500 @ $5.")
+		print("\nBuy some ice! You can buy 100 cubes @ $2, 250 @ $4, or 500 @ $7.")
 		ice_quantity = int(input("Enter how many cubes you need: "))
 		#add try/except
 		if ice_quantity == 100:
@@ -67,7 +72,7 @@ class Vendor:
 			supplies.add_ice(ice_quantity)
 
 	def buy_cups(self,cash,supplies):
-		print("\nYou can buy 10 @ $1, 25 @ $2, or 60 @ $5 cups at time.")
+		print("\nYou can buy 10 @ $2, 25 @ $4, or 60 @ $7 cups at time.")
 		cups_quantity = int(input("Enter how many you need: "))
 		#add try/except
 		if cups_quantity == 10:
@@ -79,7 +84,6 @@ class Vendor:
 		elif cups_quantity == 60:
 			cash.subtract_money(cups.price_60)
 			supplies.add_cups(cups_quantity)
-
 
 	def set_price(self):
 		print("You can set your price anywhere from $1-4")

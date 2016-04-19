@@ -19,12 +19,11 @@ class Supplies:
 		print("Cups: ",self.cups)
 
 
-	def check_supplies(self,vendor,cas,supplies):
+	def check_supplies(self,vendor,cash,supplies):
 		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
 			return True
 		else:
-			print("You don't have enough ingredients!")
-			vendor.buy_stuff(cash,supplies) #error
+			return False
 
 	#could maybe make these into one method:
 	def add_lemons(self,num):

@@ -24,10 +24,11 @@ class Lemonade:
 	def subtract_drink(self):
 		self.drinks -= 1
 
-	def sold_lemonade(self):
-		sold = self.drinks
-		print("Lemonades sold today:",sold)
 
 	def get_lemonades(self):
 		print("\nLemonades available: ",self.drinks)
 
+
+	def sold_lemonade(self):
+		sold = self.drinks
+		print("Lemonades sold today:",sold)

@@ -5,6 +5,7 @@ from money import Money
 from supplies import Supplies
 from lemonade import Lemonade 
 
+
 vendor = Vendor()
 today = Weather()
 cash = Money()
@@ -12,25 +13,11 @@ supplies = Supplies()
 lemonade = Lemonade()
 customer = Customer()
 
-#customers:
-jon = Customer() 
-ned = Customer()
-loris = Customer()
-arya = Customer()
-denaerys = Customer()
-rob = Customer()
-dracon = Customer()
-greyworm = Customer()
-jamie = Customer()
-joffrey = Customer()
-reek = Customer()
 
-
-#game flow:
-#should have a main loop through all customers
 def main():
 	day = 0
 	while day < 7:
+		print("Cash in hand: ${}".format(cash.dollars))
 		vendor.make_supplies_list(supplies)
 		print("\nToday's forecast:",today.get_temp(),"and",today.get_cloudiness())
 		print("Weather score: ",today.weather_score)
