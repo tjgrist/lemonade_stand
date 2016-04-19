@@ -1,7 +1,7 @@
 class Money:
 
 	def __init__(self):
-		self.dollars = 100
+		self.dollars = 20
 
 	def add_money(self,dollars):
 		self.dollars += dollars

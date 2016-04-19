@@ -3,9 +3,8 @@ from lemons import Lemons
 from sugar import Sugar
 from ice import Ice 
 from cups import Cups
-from money import Money
 
-cash = Money()
+
 lemons = Lemons()
 sugar = Sugar()
 ice = Ice()
@@ -16,64 +15,72 @@ class Vendor:
 	def __init__(self):
 		self.available_supplies = []
 		self.recipe = 0
-		
-		self.lemons_quantity = 0
-		self.sugar_quantity = 0
-		self.ice_quantity = 0
-		self.cups_quantity = 0
 
 		self.price = 0
 
 
-	def buy_lemons(self):
+	def buy_lemons(self,cash,supplies):
 		print("\nBuy some lemons! You can buy 10 at $1, 25 at $2, or 60 at $5.")
 		lemons_quantity = int(input("Enter how many lemons you need: "))
 		#add try/except
 		if lemons_quantity == 10:
 			cash.subtract_money(lemons.price_10)
+			supplies.add_lemons(lemons_quantity)
 		elif lemons_quantity == 25:
 			cash.subtract_money(lemons.price_25)
+			supplies.add_lemons(lemons_quantity)
 		elif lemons_quantity == 60:
 			cash.subtract_money(lemons.price_60)
-		self.lemons_quantity += lemons_quantity
+			supplies.add_lemons(lemons_quantity)
+		print("qua:",supplies.lemons)
 
 
-	def buy_sugar(self):
+	def buy_sugar(self,cash,supplies):
 		print("\nBuy some sugar! You can buy 10 cups at $1, 25 at $2, or 60 at $5.")
 		sugar_quantity = int(input("Enter how much sugar you need: "))
 		#add try/except
 		if sugar_quantity == 10:
 			cash.subtract_money(sugar.price_10)
+			supplies.add_sugar(sugar_quantity)
 		elif sugar_quantity == 25:
 			cash.subtract_money(sugar.price_25)
+			supplies.add_sugar(sugar_quantity)
 		elif sugar_quantity == 60:
 			cash.subtract_money(sugar.price_60)
-		self.sugar_quantity += sugar_quantity
+			supplies.add_sugar(sugar_quantity)
+		print("qua:",supplies.sugar)
 
 
-	def buy_ice(self):
+	def buy_ice(self,cash,supplies):
 		print("\nBuy some ice! You can buy 100 cubes at $1, 250 at $2, or 500 at $5.")
 		ice_quantity = int(input("Enter how many cubes you need: "))
 		#add try/except
 		if ice_quantity == 100:
 			cash.subtract_money(ice.price_100)
+			supplies.add_ice(ice_quantity)
 		elif ice_quantity == 250:
 			cash.subtract_money(ice.price_250)
+			supplies.add_ice(ice_quantity)
 		elif ice_quantity == 500:
 			cash.subtract_money(ice.price_500)
-		self.ice_quantity += ice_quantity
+			supplies.add_ice(ice_quantity)
+		print("qua:",supplies.ice)
 
-	def buy_cups(self):
+
+	def buy_cups(self,cash,supplies):
 		print("\nYou can buy 10 at $1, 25 at $2, or 60 at $5 cups at time.")
 		cups_quantity = int(input("Enter how many you need: "))
 		#add try/except
 		if cups_quantity == 10:
 			cash.subtract_money(cups.price_10)
+			supplies.add_cups(cups_quantity)
 		elif cups_quantity == 25:
 			cash.subtract_money(cups.price_25)
+			supplies.add_cups(cups_quantity)
 		elif cups_quantity == 60:
 			cash.subtract_money(cups.price_60)
-		self.cups_quantity += cups_quantity
+			supplies.add_cups(cups_quantity)
+		print("qua:",supplies.cups)
 
 
 	def make_lemonade(self):
@@ -91,7 +98,14 @@ class Vendor:
 		#try/except for int
 		self.price = price
 
-	def sell(self,price):
+	def make_supplies_list(self,supplies):
+		lemons = supplies.lemons
+		sugar = supplies.sugar
+		ice = supplies.ice
+		cups = supplies.cups
+		supplies.show_supplies_list(lemons,sugar,ice,cups)
+		
+def sell(self,price):
 		price = price 
 
 	def buy_more(self):
@@ -99,13 +113,6 @@ class Vendor:
 		if answer == "yes":
 			ingredient = input("Which ingredient")
 
-	def make_supplies_list(self):
-		supplies = Supplies()
-		lemons = self.lemons_quantity
-		sugar = self.sugar_quantity
-		ice = self.ice_quantity
-		cups = self.cups_quantity
-		supplies.show_supplies_list(lemons,sugar,ice,cups)
 
 	# def change_price(self):
 

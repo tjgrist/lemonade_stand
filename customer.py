@@ -2,6 +2,7 @@ from lemonade import Lemonade
 from random import randint 
 from vendor import Vendor
 from money import Money 
+from supplies import Supplies
 
 class Customer:
 
@@ -11,36 +12,44 @@ class Customer:
 
 
 
-	def buy(self,price,cash,weather_score):
-		print("lemonade cost: ",price)
-		if weather_score + price >= 100:
-			print(self.customer_says(),"Yum!")
-			cash.add_money(price)
-			print("Cash in hand:",cash.dollars)
+	def buy(self,price,cash,weather_score,supplies,vendor):
+		print("lemonade cost: $",price)
+		print("Customer chance:",self.chance)
 
-		elif weather_score >= 90:
-			print(self.customer_says(),"Refreshing!")
-			cash.add_money(price)
-			print("Cash in hand:",cash.dollars)
+		if supplies.check_supplies() == True:
 
-		elif weather_score >= 80: 
-			print(self.customer_says(),"Good Lemonade")
-			cash.add_money(price)
-			print("Cash in hand:",cash.dollars)
+			if weather_score >= 100 and self.chance >= 10 and price <= 3:
+				print(self.customer_says(),"Yum!")
+				cash.add_money(price)
+				print("Cash in hand:",cash.dollars)
 
-		elif weather_score >= 70:
-			print(self.customer_says(),"Too cold but tasty.")
-			cash.add_money(price)
-			print("Cash in hand:",cash.dollars)
+			elif weather_score >= 90 and self.chance >= 20 and price <= 2:
+				print(self.customer_says(),"Refreshing!")
+				cash.add_money(price)
+				print("Cash in hand:",cash.dollars)
 
-		elif weather_score >= 60: 
-			print(self.customer_says(),"Chilly, but pretty good.")	
-			cash.add_money(price)
-			print("Cash in hand:",cash.dollars)
+			elif weather_score >= 80 and self.chance >= 30 and price <= 2: 
+				print(self.customer_says(),"Good Lemonade")
+				cash.add_money(price)
+				print("Cash in hand:",cash.dollars)
 
-		else:
-			print(self.customer_says(),"Not buying today.")
-			print("Cash in hand:",cash.dollars)
+			elif weather_score >= 70 and self.chance >= 40 and price <=1:
+				print(self.customer_says(),"Too cold but tasty.")
+				cash.add_money(price)
+				print("Cash in hand:",cash.dollars)
+
+			elif weather_score >= 60 and self.chance >= 50 and price <=1: 
+				print(self.customer_says(),"Chilly, but pretty good.")	
+				cash.add_money(price)
+				print("Cash in hand:",cash.dollars)
+
+			else:
+				print(self.customer_says(),"Not buying today.")
+				print("Cash in hand:",cash.dollars)
+
+		else: 
+			print("\nYou're out of some ingredients!")
+			vendor.make_supplies_list()
 
 	def get_num_customers(self):
 		print()
