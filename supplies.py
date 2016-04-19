@@ -14,23 +14,19 @@ class Supplies:
 	def show_supplies_list(self,lemons,sugar,ice,cups):
 		print("\nYou have:")
 		print("Lemons: ",self.lemons)
-		print("Sugar: ",self.sugar)
-		print("Ice: ",self.ice)
+		print("Sugar: {} cups".format(self.sugar))
+		print("Ice: {} cubes".format(self.ice))
 		print("Cups: ",self.cups)
 
 
-	def check_supplies(self,vendor):
+	def check_supplies(self,vendor,cas,supplies):
 		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
 			return True
 		else:
 			print("You don't have enough ingredients!")
-			vendor.buy_stuff(cash.dollars,self.supplies) #error
+			vendor.buy_stuff(cash,supplies) #error
 
-
-	def get_profits(self,cash):
-		return cash - 20
-
-#could maybe make these into one method:
+	#could maybe make these into one method:
 	def add_lemons(self,num):
 		if num == 10:
 			self.lemons += 10
@@ -63,6 +59,9 @@ class Supplies:
 		elif num == 60:
 			self.cups += 60
 
+
+	def get_profits(self,cash):
+		return cash - 20
 
 	def subtract_supplies(self,drinks):
 		

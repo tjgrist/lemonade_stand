@@ -9,10 +9,16 @@ class Lemonade:
 
 
 	def make_lemonade(self,lemons,sugar,ice,cups):
-		pitchers = int((lemons + sugar + ice)/5)
-		extra =  pitchers - cups
-		self.drinks = pitchers - extra
-		print("Number of lemonades you can make:",self.drinks)
+		glasses = int((lemons + sugar + ice)/5)
+		print("Glasses of lemonade:",glasses)
+		print("Cups available:",cups)
+		extra_lemonade =  glasses - cups
+		print("Extra lemonades:",extra_lemonade)
+		self.drinks = glasses - extra_lemonade
+		if glasses > cups:
+			print("Number of lemonades you can make today: {}\n".format(self.drinks))
+		else: 
+			print("Number of lemonades you can make today: {}\n".format(cups))
 
 
 	def subtract_drink(self):
@@ -23,4 +29,5 @@ class Lemonade:
 		print("Lemonades sold today:",sold)
 
 	def get_lemonades(self):
-		print("Lemonades available: ",self.drinks)
+		print("\nLemonades available: ",self.drinks)
+

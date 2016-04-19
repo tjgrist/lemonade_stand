@@ -10,6 +10,7 @@ today = Weather()
 cash = Money()
 supplies = Supplies()
 lemonade = Lemonade()
+customer = Customer()
 
 #customers:
 jon = Customer() 
@@ -30,19 +31,11 @@ reek = Customer()
 def main():
 	day = 0
 	while day < 7:
-		#show supplies
 		vendor.make_supplies_list(supplies)
-		#show day's weather
 		print("\nToday's forecast:",today.get_temp(),"and",today.get_cloudiness())
-		print("weather score: ",today.weather_score)
+		print("Weather score: ",today.weather_score)
 
-		#buy ingredients -- make this one function vendor.buy_stuff(cash,supplies)
-		#vendor.buy_stuff(cash,supplies,vendor)
-		vendor.buy_lemons(cash,supplies)
-		vendor.buy_sugar(cash,supplies)
-		vendor.buy_ice(cash,supplies)
-		vendor.buy_cups(cash,supplies)
-
+		vendor.buy_stuff(cash,supplies,vendor)
 		vendor.make_supplies_list(supplies)
 		
 		lemonade.make_lemonade(supplies.lemons,supplies.sugar,supplies.ice,supplies.cups)#How much lemonade I can make 
@@ -56,17 +49,8 @@ def main():
 
 		#sell and earn 
 		#make this a customer flow function
-		jon.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		ned.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		loris.buy(vendor.price, cash, today.weather_score,supplies, vendor,lemonade)
-		arya.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		denaerys.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		rob.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		dracon.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		greyworm.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		jamie.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		joffrey .buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
-		reek.buy(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+
+		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 
 		
 		supplies.subtract_supplies(lemonade.drinks)
@@ -79,4 +63,5 @@ def main():
 main()
 
 #To do tmrw: make sure supply flow works well/is realistic.
-#subtract lemonade "drinks" made from the day, and subtract ice.f
+#subtract lemonade "drinks" made from the day, and subtract ice.
+#make it possible to buy more ingredients if you don't have enough to sell... -- maybe not necessary.

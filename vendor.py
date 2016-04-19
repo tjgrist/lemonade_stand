@@ -23,20 +23,20 @@ class Vendor:
 		self.buy_ice(cash,supplies)
 		self.buy_cups(cash,supplies)
 
-
+	#can I combine these?
 	def buy_lemons(self,cash,supplies):
 		print("\nBuy some lemons! You can buy 10 @ $1, 25 @ $2, or 60 @ $5.")
 		lemons_quantity = int(input("Enter how many lemons you need: "))
 		#add try/except
 		if lemons_quantity == 10:
-			cash.subtract_money(lemon.price_10)
-			supplies.add_lemon(lemons_quantity)
+			cash.subtract_money(lemons.price_10)
+			supplies.add_lemons(lemons_quantity)
 		elif lemons_quantity == 25:
-			cash.subtract_money(lemon.price_25)
-			supplies.add_lemon(lemons_quantity)
+			cash.subtract_money(lemons.price_25)
+			supplies.add_lemons(lemons_quantity)
 		elif lemons_quantity == 60:
-			cash.subtract_money(lemon.price_60)
-			supplies.add_lemon(lemons_quantity)
+			cash.subtract_money(lemons.price_60)
+			supplies.add_lemons(lemons_quantity)
 
 	def buy_sugar(self,cash,supplies):
 		print("\nBuy some sugar! You can buy 10 cups @ $1, 25 @ $2, or 60 @ $5.")
@@ -82,7 +82,7 @@ class Vendor:
 
 
 	def set_price(self):
-		print("You can set your price anywhere between 1 and 5 dollars.")
+		print("You can set your price anywhere from $1-4")
 		price = int(input("What shall the price be today? "))
 		#try/except for int
 		self.price = price
