@@ -16,9 +16,9 @@ class Lemonade:
 		print("Extra lemonades:",extra_lemonade)
 		self.drinks = glasses - extra_lemonade
 		if glasses > cups:
-			print("Number of lemonades you can make today: {}\n".format(self.drinks))
-		else: 
 			print("Number of lemonades you can make today: {}\n".format(cups))
+		else: 
+			print("Number of lemonades you can make today: {}\n".format(glasses))
 
 
 	def subtract_drink(self):
@@ -26,8 +26,15 @@ class Lemonade:
 
 
 	def get_lemonades(self):
-		print("\nLemonades available: ",self.drinks)
+		while self.drinks > 0:
+			print("\nLemonades available: ",self.drinks)
+			return True
+		else:
+			return False
 
+
+	def get_status(self):
+		print("You sold out!")
 
 	def sold_lemonade(self):
 		sold = self.drinks

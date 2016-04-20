@@ -6,7 +6,6 @@ class Weather:
 		self.current_weather = None
 		self.day = None
 		self.weather_score = 0
-		#self.cloudiness = False
 	
 
 	def get_temp(self):
@@ -24,8 +23,13 @@ class Weather:
 			self.weather_score += 10
 			return "overcast"
 		else:
-			self.weather_score -= 20
+			self.weather_score -= 15
 			return "rainy"
+
+
+	def get_forecast(self):
+		print("\nToday's forecast:",self.get_temp(),"and",self.get_cloudiness())
+		print("Weather score: ",self.weather_score)
 
 
 	def get_day(self):

@@ -59,16 +59,13 @@ class Supplies:
 			self.cups += 60
 
 
-	def get_profits(self,cash):
-		return cash - 20
-
 	def subtract_supplies(self,drinks):
 		
 			self.lemons -= self.lemons*0.3
 			self.sugar -= self.sugar*0.3
 			self.cups -= drinks
 			self.ice -= self.ice
-			print("\nOh no! You're ice melted. Be sure to get some more.")
+			print("\n\n\nOh no! You're ice melted. Be sure to get some more.")
 			
 
 

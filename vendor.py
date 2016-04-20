@@ -17,6 +17,7 @@ class Vendor:
 		self.recipe = 0
 		self.price = 0
 
+
 	def buy_stuff(self,cash,supplies,vendor):
 		if supplies.check_supplies(vendor,cash,supplies) == True:
 			pass
@@ -85,11 +86,13 @@ class Vendor:
 			cash.subtract_money(cups.price_60)
 			supplies.add_cups(cups_quantity)
 
+
 	def set_price(self):
 		print("You can set your price anywhere from $1-4")
-		price = int(input("What shall the price be today? "))
+		price = int(input("What shall the price be today? $"))
 		#try/except for int
 		self.price = price
+
 
 	def make_supplies_list(self,supplies):
 		lem = supplies.lemons
@@ -98,8 +101,6 @@ class Vendor:
 		cup = supplies.cups
 		supplies.show_supplies_list(lem,sug,ice,cup)
 
-	def sell(self,price):
-		price = price 
 
 	def craft_lemonade(self):
 			default_recipe = 10
@@ -110,6 +111,7 @@ class Vendor:
 			else:
 				self.recipe = default_recipe
 
+
 	def buy_more(self,cash,supplies):
 		answer = input("Would you like to buy more ingredients? ").lower().replace(" ","")
 		if answer == "yes":
@@ -118,6 +120,9 @@ class Vendor:
 			self.buy_ice(cash,supplies)
 			self.buy_cups(cash,supplies)
 
+
+	def sell(self,price):
+		price = price 
 
 	# def change_price(self):
 
