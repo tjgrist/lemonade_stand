@@ -19,7 +19,7 @@ class Vendor:
 		self.price = 0
 
 
-	def buy_stuff(self,cash,supplies,vendor):
+	def buy_supplies(self,cash,supplies,vendor):
 		if supplies.check_supplies(vendor,cash,supplies) == True:
 			pass
 		else: 
@@ -40,7 +40,7 @@ class Vendor:
 
 	def get_list_buy(self,supplies,cash,vendor):
 		self.make_supplies_list(supplies)
-		self.buy_stuff(cash,supplies,vendor)
+		self.buy_supplies(cash,supplies,vendor)
 		self.make_supplies_list(supplies)
 
 
@@ -130,7 +130,7 @@ class Vendor:
 			print("\nOops. Try entering a numeric value.")
 			self.buy_cups(cash,supplies)
 
-			
+
 	def craft_lemonade(self):
 			default_recipe = 10
 			print("The default recipe is 5 lemons/pitcher, 5 cups sugar/pitcher, and 10 ice cubes/pitcher.")

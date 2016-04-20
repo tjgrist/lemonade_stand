@@ -20,14 +20,14 @@ def main():
 	day = 0
 
 	while day < 7:
-		
-		cash.get_status()
+
+		cash.show_status()
 		
 		today.get_forecast()
 		
 		vendor.get_list_buy(supplies,cash,vendor)
 
-		cash.get_status()
+		cash.show_status()
 		
 		lemonade.make_lemonade(supplies.lemons,supplies.sugar,supplies.ice,supplies.cups) 
 		
@@ -37,7 +37,7 @@ def main():
 
 		supplies.subtract_supplies(lemonade.sold_lemonade())
 
-		cash.get_earnings()
+		cash.show_earnings()
 
 		day += 1
 

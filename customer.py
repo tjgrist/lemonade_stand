@@ -49,10 +49,10 @@ class Customer:
 			elif weather_score >= 90 and self.chance >= 20 and price <= 3:
 				self.buy_accordingly(price, cash, lemonade)
 
-			elif weather_score >= 80 and self.chance >= 30 and price <= 2: 
+			elif weather_score >= 80 and self.chance >= 30 and price <= 3: 
 				self.buy_accordingly(price, cash, lemonade)
 
-			elif weather_score >= 70 and self.chance >= 40 and price <=2:
+			elif weather_score >= 70 and self.chance >= 40 and price <=2.5:
 				self.buy_accordingly(price, cash, lemonade)
 
 			elif weather_score >= 60 and self.chance >= 50 and price <=2: 

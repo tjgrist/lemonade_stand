@@ -7,15 +7,14 @@ class Money:
 		self.dollars = 25
 
 	
-	def get_earnings(self):
+	def show_earnings(self):
 		print("\nCash in hand: ${}".format(self.dollars))
 		print("\n*TOTAL profits*: ${}\n".format(self.get_profits(self.dollars)))
 		print("Good luck tomorrow.")
 		print("___________________________________________________________\n")
 	
 
-
-	def get_status(self):
+	def show_status(self):
 		print("\nCash in hand: ${}".format(self.dollars))
 
 
