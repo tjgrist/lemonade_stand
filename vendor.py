@@ -1,4 +1,3 @@
-# from supplies import Supplies 
 from lemons import Lemons 
 from sugar import Sugar
 from ice import Ice 
@@ -31,11 +30,7 @@ class Vendor:
 
 		
 	def make_supplies_list(self,supplies):
-		lem = supplies.lemons
-		sug = supplies.sugar
-		ice = supplies.ice
-		cup = supplies.cups
-		supplies.show_supplies_list(lem,sug,ice,cup)
+		supplies.show_supplies_list(supplies.lemons, supplies.sugar, supplies.ice, supplies.cups)
 
 
 	def get_list_buy(self,supplies,cash,vendor):
