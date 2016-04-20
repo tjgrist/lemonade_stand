@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Weather: 
 	
 	def __init__(self):
@@ -33,8 +34,11 @@ class Weather:
 
 
 	def get_day(self):
-		for days in range(7):
-			self.day = "Monday"
-			print(self.day) 
-			break
+		weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+		new_day = weekdays[+1]
 
+		for each_day in weekdays:
+			weekdays.remove(weekdays[0])
+			print("It's {}.".format(new_day))
+			print(weekdays)
+			break

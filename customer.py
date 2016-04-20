@@ -5,6 +5,7 @@ from money import Money
 from supplies import Supplies
 from weather import Weather
 
+
 class Customer:
 
 	def __init__(self):
@@ -15,25 +16,25 @@ class Customer:
 		customers_out = 0
 		
 		if weather_score >= 85:
-			while customers_out < 40:
+			while customers_out < randint(35,48):
 				customer = Customer()				
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 
 		elif weather_score >= 70:
-			while customers_out < 30:
+			while customers_out < randint(25,30):
 				customer = Customer()
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 
 		elif weather_score >= 55:
-			while customers_out < 20:
+			while customers_out < randint(15,23):
 				customer = Customer()
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 
 		elif weather_score >= 40:
-			while customers_out < 10:
+			while customers_out < randint(8,12):
 				customer = Customer()
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1

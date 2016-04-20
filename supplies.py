@@ -1,14 +1,15 @@
 from lemonade import Lemonade 
 from money import Money 
 
+
 class Supplies:
+
 
 	def __init__(self):
 		self.lemons = 0
 		self.sugar = 0
 		self.ice = 0
 		self.cups = 0
-		self.pitchers_ready = 0
 
 
 	def show_supplies_list(self,lemons,sugar,ice,cups):
@@ -25,7 +26,7 @@ class Supplies:
 		else:
 			return False
 
-	#could maybe make these into one method:
+
 	def add_lemons(self,num):
 		if num == 10:
 			self.lemons += 10
@@ -33,6 +34,7 @@ class Supplies:
 			self.lemons += 25
 		elif num == 60:
 			self.lemons += 60
+
 
 	def add_sugar(self,num):
 		if num == 10:
@@ -42,6 +44,7 @@ class Supplies:
 		elif num == 60:
 			self.sugar += 60
 
+
 	def add_ice(self,num):
 		if num == 100:
 			self.ice += 100
@@ -49,6 +52,7 @@ class Supplies:
 			self.ice += 250
 		elif num == 500:
 			self.ice += 500
+
 
 	def add_cups(self,num):
 		if num == 10:

@@ -16,14 +16,13 @@ customer = Customer()
 
 def main():
 	day = 0
+
 	while day < 7:
 		cash.get_status()
 		
 		today.get_forecast()
 		
-		vendor.make_supplies_list(supplies)
-		vendor.buy_stuff(cash,supplies,vendor)
-		vendor.make_supplies_list(supplies)
+		vendor.get_list_buy(supplies,cash,vendor)
 
 		cash.get_status()
 		
@@ -31,7 +30,6 @@ def main():
 		
 		vendor.set_price()
 
-		#sell and earn:
 		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 
 		supplies.subtract_supplies(lemonade.drinks)
@@ -40,9 +38,9 @@ def main():
 
 		day += 1
 
+		today.get_day()
+
 main()
 
 #To do tmrw: make sure supply flow works well/is realistic.
-#subtract lemonade "drinks" made from the day, and subtract ice.
-#make it possible to buy more ingredients if you don't have enough to sell...maybe not necessary.
 #make lemonade recipe *could worry about this later and leave default

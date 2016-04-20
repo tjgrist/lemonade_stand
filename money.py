@@ -1,5 +1,7 @@
 
+
 class Money:
+
 
 	def __init__(self):
 		self.dollars = 25
@@ -8,7 +10,7 @@ class Money:
 	def get_earnings(self):
 		print("\n...Let's see how you did today...")
 		print("\nCash in hand: ${}".format(self.dollars))
-		print("Total profits: ${}\n".format(self.get_profits(self.dollars)))
+		print("*Total profits*: ${}\n".format(self.get_profits(self.dollars)))
 		print("___________________________________________________________\n")
 		print("...The next day is here! Good luck.")
 
