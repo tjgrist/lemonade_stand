@@ -27,6 +27,15 @@ class Supplies:
 			return False
 
 
+	def subtract_supplies(self,lemonades_sold):
+		
+		self.lemons -= lemonades_sold*0.5
+		self.sugar -= lemonades_sold*0.5
+		self.cups -= lemonades_sold
+		self.ice -= self.ice
+		print("\nBut you're ice melted! Be sure to get some more.")
+		
+			
 	def add_lemons(self,num):
 		if num == 10:
 			self.lemons += 10
@@ -63,14 +72,6 @@ class Supplies:
 			self.cups += 60
 
 
-	def subtract_supplies(self,drinks):
-		
-			self.lemons -= self.lemons*0.3
-			self.sugar -= self.sugar*0.3
-			self.cups -= drinks
-			self.ice -= self.ice
-			print("\n\n\nOh no! You're ice melted. Be sure to get some more.")
-			
 
 
 

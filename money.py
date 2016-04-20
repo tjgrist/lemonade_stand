@@ -8,11 +8,11 @@ class Money:
 
 	
 	def get_earnings(self):
-		print("\n...Let's see how you did today...")
 		print("\nCash in hand: ${}".format(self.dollars))
-		print("*Total profits*: ${}\n".format(self.get_profits(self.dollars)))
+		print("\n*TOTAL profits*: ${}\n".format(self.get_profits(self.dollars)))
+		print("Good luck tomorrow.")
 		print("___________________________________________________________\n")
-		print("...The next day is here! Good luck.")
+	
 
 
 	def get_status(self):

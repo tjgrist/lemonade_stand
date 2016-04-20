@@ -23,13 +23,38 @@ class Vendor:
 		if supplies.check_supplies(vendor,cash,supplies) == True:
 			pass
 		else: 
-			print("\nYou need some ingredients!\n")
+			print("\nYou need some things!")
 			self.buy_lemons(cash,supplies)
 			self.buy_sugar(cash,supplies)
 			self.buy_ice(cash,supplies)
 			self.buy_cups(cash,supplies)
 
 		
+	def make_supplies_list(self,supplies):
+		lem = supplies.lemons
+		sug = supplies.sugar
+		ice = supplies.ice
+		cup = supplies.cups
+		supplies.show_supplies_list(lem,sug,ice,cup)
+
+
+	def get_list_buy(self,supplies,cash,vendor):
+		self.make_supplies_list(supplies)
+		self.buy_stuff(cash,supplies,vendor)
+		self.make_supplies_list(supplies)
+
+
+	def set_price(self):
+		print("You can set your price anywhere from $1-4")
+		price = input("What shall the price be today? $")
+		try: 
+			new_price = float(price)
+			self.price = new_price
+		except:
+			print("Try entering a numeric value.")
+			self.set_price()
+
+
 	def buy_lemons(self,cash,supplies):
 		print("\nBuy some lemons! You can buy 10 @ $2, 25 @ $4, or 60 @ $7.")
 		lemons_quantity = input("Enter how many lemons you need: ")
@@ -104,33 +129,8 @@ class Vendor:
 		except:
 			print("\nOops. Try entering a numeric value.")
 			self.buy_cups(cash,supplies)
-		
 
-	def make_supplies_list(self,supplies):
-		lem = supplies.lemons
-		sug = supplies.sugar
-		ice = supplies.ice
-		cup = supplies.cups
-		supplies.show_supplies_list(lem,sug,ice,cup)
-
-
-	def get_list_buy(self,supplies,cash,vendor):
-		self.make_supplies_list(supplies)
-		self.buy_stuff(cash,supplies,vendor)
-		self.make_supplies_list(supplies)
-
-
-	def set_price(self):
-		print("You can set your price anywhere from $1-4")
-		price = input("What shall the price be today? $")
-		try: 
-			new_price = int(price)
-			self.price = new_price
-		except:
-			print("Try entering a numeric value.")
-			self.set_price()
-
-
+			
 	def craft_lemonade(self):
 			default_recipe = 10
 			print("The default recipe is 5 lemons/pitcher, 5 cups sugar/pitcher, and 10 ice cubes/pitcher.")
@@ -139,6 +139,49 @@ class Vendor:
 				self.recipe = change_recipe()
 			else:
 				self.recipe = default_recipe
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	# def change_recipe(self):

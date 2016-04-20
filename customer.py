@@ -17,7 +17,7 @@ class Customer:
 		
 		if weather_score >= 85:
 			while customers_out < randint(35,48):
-				customer = Customer()				
+				customer = Customer()
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 
@@ -44,31 +44,21 @@ class Customer:
 		
 		if lemonade.get_lemonades() == True:
 			if weather_score >= 100 and self.chance >= 10 and price <= 4:
-				self.customer_says()
-				cash.add_money(price)
-				lemonade.subtract_drink()
+				self.buy_accordingly(price, cash, lemonade)
 
 			elif weather_score >= 90 and self.chance >= 20 and price <= 3:
-				self.customer_says()
-				cash.add_money(price)
-				lemonade.subtract_drink()
+				self.buy_accordingly(price, cash, lemonade)
 
 			elif weather_score >= 80 and self.chance >= 30 and price <= 2: 
-				self.customer_says()
-				cash.add_money(price)
-				lemonade.subtract_drink()
+				self.buy_accordingly(price, cash, lemonade)
 
 			elif weather_score >= 70 and self.chance >= 40 and price <=2:
-				self.customer_says()
-				cash.add_money(price)
-				lemonade.subtract_drink()
+				self.buy_accordingly(price, cash, lemonade)
 
 			elif weather_score >= 60 and self.chance >= 50 and price <=2: 
-				self.customer_says()
-				cash.add_money(price)
-				lemonade.subtract_drink()
+				self.buy_accordingly(price, cash, lemonade)
 
-			elif weather_score >= 40 and self.chance >= 50 and price <= 1:
+			elif weather_score >= 40 and self.chance >= 50 and price <= 1.5:
 				print("Customer says:\n'It's too cold, but the sugar warms me up.'"	)
 				cash.add_money(price)
 				lemonade.subtract_drink()
@@ -80,8 +70,14 @@ class Customer:
 			return False
 				
 
+	def buy_accordingly(self,price,cash,lemonade):
+		self.customer_says()
+		cash.add_money(price)
+		lemonade.subtract_drink()
+
+
 	def customer_says(self):
-		response = randint(1,5)
+		response = randint(1,7)
 		if response == 1:
 			response = "'Yum!'"
 		elif response == 2:
@@ -91,6 +87,8 @@ class Customer:
 		elif response == 4:
 			response = "'Too cold but tasty.'"
 		elif response == 5:
-			response = "'Yummy lemonade.'"	
-		print("\nYou got a customer! They say:",response)
-
+			response = "'Yummy lemonade.'"
+		elif response == 6:
+			response = "'Not bad.'"	
+		elif response == 7: "'Awesome lemonade.'"
+		print("\n$$$\nYou got a customer! They say:",response)

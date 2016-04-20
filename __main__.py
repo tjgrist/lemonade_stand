@@ -15,9 +15,12 @@ customer = Customer()
 
 
 def main():
+	weekdays = today.get_weekday_list()
+	
 	day = 0
 
 	while day < 7:
+		
 		cash.get_status()
 		
 		today.get_forecast()
@@ -32,15 +35,19 @@ def main():
 
 		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
 
-		supplies.subtract_supplies(lemonade.drinks)
+		supplies.subtract_supplies(lemonade.sold_lemonade())
 
 		cash.get_earnings()
 
 		day += 1
 
-		today.get_day()
+		for each_day in weekdays:
+			print("It's a new day! Today is {}.".format(weekdays[+1]))
+			weekdays.remove(weekdays[0])
+			break
+	else:
+		print("\nGood selling!\n")
+
 
 main()
 
-#To do tmrw: make sure supply flow works well/is realistic.
-#make lemonade recipe *could worry about this later and leave default

@@ -30,15 +30,8 @@ class Weather:
 
 	def get_forecast(self):
 		print("\nToday's forecast:",self.get_temp(),"and",self.get_cloudiness())
-		print("Weather score: ",self.weather_score)
 
 
-	def get_day(self):
-		weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
-		new_day = weekdays[+1]
-
-		for each_day in weekdays:
-			weekdays.remove(weekdays[0])
-			print("It's {}.".format(new_day))
-			print(weekdays)
-			break
+	def get_weekday_list(self):
+		weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Monday, but the week is over"]
+		return weekdays
