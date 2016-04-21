@@ -1,17 +1,6 @@
-from lemons import Lemons 
-from sugar import Sugar
-from ice import Ice 
-from cups import Cups
-
-
-lemons = Lemons()
-sugar = Sugar()
-ice = Ice()
-cups = Cups()
 
 
 class Vendor:
-
 
 	def __init__(self):
 		self.recipe = 0
@@ -19,14 +8,11 @@ class Vendor:
 
 
 	def buy_supplies(self,cash,supplies,vendor):
-		if supplies.check_supplies(vendor,cash,supplies) == True:
-			pass
-		else: 
-			print("\nYou need some things!")
-			self.buy_lemons(cash,supplies)
-			self.buy_sugar(cash,supplies)
-			self.buy_ice(cash,supplies)
-			self.buy_cups(cash,supplies)
+		print("\nYou need some things!")
+		self.buy_lemons(cash,supplies)
+		self.buy_sugar(cash,supplies)
+		self.buy_ice(cash,supplies)
+		self.buy_cups(cash,supplies)
 
 		
 	def make_supplies_list(self,supplies):
@@ -56,13 +42,13 @@ class Vendor:
 		try:
 			amount = int(lemons_quantity)
 			if amount == 10:
-				cash.subtract_money(lemons.price_10)
+				cash.subtract_money(supplies.price_10)
 				supplies.add_lemons(amount)
 			elif amount == 25:
-				cash.subtract_money(lemons.price_25)
+				cash.subtract_money(supplies.price_25)
 				supplies.add_lemons(amount)
 			elif amount == 60:
-				cash.subtract_money(lemons.price_60)
+				cash.subtract_money(supplies.price_60)
 				supplies.add_lemons(amount)
 		except:
 			print("\nOops. Try entering a numeric value.")
@@ -75,13 +61,13 @@ class Vendor:
 		try: 
 			amount = int(sugar_quantity)
 			if amount == 10:
-				cash.subtract_money(sugar.price_10)
+				cash.subtract_money(supplies.price_10)
 				supplies.add_sugar(amount)
 			elif amount == 25:
-				cash.subtract_money(sugar.price_25)
+				cash.subtract_money(supplies.price_25)
 				supplies.add_sugar(amount)
 			elif amount == 60:
-				cash.subtract_money(sugar.price_60)
+				cash.subtract_money(supplies.price_60)
 				supplies.add_sugar(amount)
 		except:
 			print("\nOops. Try entering a numeric value.")
@@ -94,13 +80,13 @@ class Vendor:
 		try: 
 			amount = int(ice_quantity)
 			if amount == 100:
-				cash.subtract_money(ice.price_100)
+				cash.subtract_money(supplies.price_10)
 				supplies.add_ice(amount)
 			elif amount == 250:
-				cash.subtract_money(ice.price_250)
+				cash.subtract_money(supplies.price_25)
 				supplies.add_ice(amount)
 			elif amount == 500:
-				cash.subtract_money(ice.price_500)
+				cash.subtract_money(supplies.price_60)
 				supplies.add_ice(amount)
 		except:
 			print("\nOops. Try entering a numeric value.")
@@ -113,28 +99,17 @@ class Vendor:
 		try:
 			amount = int(cups_quantity)
 			if amount == 10:
-				cash.subtract_money(cups.price_10)
+				cash.subtract_money(supplies.price_10)
 				supplies.add_cups(amount)
 			elif amount == 25:
-				cash.subtract_money(cups.price_25)
+				cash.subtract_money(supplies.price_25)
 				supplies.add_cups(amount)
 			elif amount == 60:
-				cash.subtract_money(cups.price_60)
+				cash.subtract_money(supplies.price_60)
 				supplies.add_cups(amount)
 		except:
 			print("\nOops. Try entering a numeric value.")
 			self.buy_cups(cash,supplies)
-
-
-	def craft_lemonade(self):
-			default_recipe = 10
-			print("The default recipe is 5 lemons/pitcher, 5 cups sugar/pitcher, and 10 ice cubes/pitcher.")
-			alter = input("Would you like to change it? ").lower().replace(" ","")
-			if alter == "yes":
-				self.recipe = change_recipe()
-			else:
-				self.recipe = default_recipe
-
 
 	
 

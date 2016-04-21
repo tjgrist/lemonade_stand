@@ -2,7 +2,6 @@
 
 class Money:
 
-
 	def __init__(self):
 		self.dollars = 25
 

@@ -3,12 +3,9 @@
 class Lemonade:
 
 	def __init__(self):
-		self.default_recipe = 10
-		self.price = 0
-		self.drinks = 0
-		self.pitchers = 0 
 		self.starting_drinks = 0
-
+		self.drinks = 0
+		
 
 	def make_lemonade(self,lemons,sugar,ice,cups):
 		glasses = int((lemons + sugar + ice)/5)
@@ -16,6 +13,7 @@ class Lemonade:
 		self.drinks = glasses - extra_lemonade
 		self.starting_drinks = self.drinks
 		self.show_available_lemonades(glasses,cups)
+
 
 	def show_available_lemonades(self,glasses,cups):
 		print("\nYou have enough ingredients for {} glasses of lemonade, and you have {} cups.".format(glasses,cups))

@@ -1,9 +1,4 @@
-from lemonade import Lemonade
 from random import randint 
-from vendor import Vendor
-from money import Money 
-from supplies import Supplies
-from weather import Weather
 
 
 class Customer:
@@ -90,5 +85,6 @@ class Customer:
 			response = "'Yummy lemonade.'"
 		elif response == 6:
 			response = "'Not bad.'"	
-		elif response == 7: "'Awesome lemonade.'"
+		elif response == 7: 
+			respones = "'Awesome lemonade.'"
 		print("\n$$$\nYou got a customer! They say:",response)

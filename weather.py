@@ -4,14 +4,12 @@ from random import randint
 class Weather: 
 	
 	def __init__(self):
-		self.current_weather = None
-		self.day = None
 		self.weather_score = 0
 	
 
 	def get_temp(self):
 		temp = randint(60,100)
-		self.weather_score = temp
+		self.weather_score += temp
 		return temp
 
 

@@ -5,7 +5,6 @@ from money import Money
 from supplies import Supplies
 from lemonade import Lemonade 
 
-
 vendor = Vendor()
 today = Weather()
 cash = Money()
@@ -20,11 +19,11 @@ def main():
 	while day < 7:
 		cash.show_status()
 		today.get_forecast()		
-		vendor.get_list_buy(supplies,cash,vendor)
+		vendor.get_list_buy(supplies, cash, vendor)
 		cash.show_status()		
-		lemonade.make_lemonade(supplies.lemons,supplies.sugar,supplies.ice,supplies.cups) 		
+		lemonade.make_lemonade(supplies.lemons, supplies.sugar, supplies.ice, supplies.cups) 		
 		vendor.set_price()
-		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor,lemonade)
+		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor, lemonade)
 		supplies.subtract_supplies(lemonade.sold_lemonade())
 		cash.show_earnings()
 		day += 1
@@ -32,9 +31,9 @@ def main():
 			print("It's a new day! Today is {}.".format(weekdays[+1]))
 			weekdays.remove(weekdays[0])
 			break
-	else:
-		print("\nGood selling!\n")
+	print("\nGood selling!\n")
 
 
-main()
+if __name__ == "__main__":
+	main()
 

@@ -1,15 +1,15 @@
-from lemonade import Lemonade 
-from money import Money 
 
 
 class Supplies:
-
 
 	def __init__(self):
 		self.lemons = 0
 		self.sugar = 0
 		self.ice = 0
 		self.cups = 0
+		self.price_10 = 2
+		self.price_25 = 4
+		self.price_60 = 7
 
 
 	def show_supplies_list(self,lemons,sugar,ice,cups):
@@ -18,13 +18,6 @@ class Supplies:
 		print("Sugar: {} cups".format(self.sugar))
 		print("Ice: {} cubes".format(self.ice))
 		print("Cups: ",self.cups)
-
-
-	def check_supplies(self,vendor,cash,supplies):
-		if self.lemons > 0 and self.sugar > 0 and self.ice > 0 and self.cups > 0:
-			return True
-		else:
-			return False
 
 
 	def subtract_supplies(self,lemonades_sold):
