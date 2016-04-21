@@ -12,59 +12,47 @@ class Supplies:
 		self.price_60 = 7
 
 
-	def show_supplies_list(self,lemons,sugar,ice,cups):
+	def show_supplies_list(self):
 		print("\nYou have:")
 		print("Lemons: ",self.lemons)
 		print("Sugar: {} cups".format(self.sugar))
-		print("Ice: {} cubes".format(self.ice))
 		print("Cups: ",self.cups)
-
+		print("Ice: {} cubes".format(self.ice))
+		
 
 	def subtract_supplies(self,lemonades_sold):
-		
-		self.lemons -= lemonades_sold*0.5
-		self.sugar -= lemonades_sold*0.5
+		self.lemons -= lemonades_sold*0.4
+		self.sugar -= lemonades_sold*0.4
 		self.cups -= lemonades_sold
 		self.ice -= self.ice
 		print("\nBut you're ice melted! Be sure to get some more.")
-		
-			
-	def add_lemons(self,num):
-		if num == 10:
-			self.lemons += 10
-		elif num == 25:
-			self.lemons += 25
-		elif num == 60:
-			self.lemons += 60
 
 
-	def add_sugar(self,num):
-		if num == 10:
-			self.sugar += 10
-		elif num == 25:
-			self.sugar += 25
-		elif num == 60:
-			self.sugar += 60
-
-
-	def add_ice(self,num):
-		if num == 100:
-			self.ice += 100
-		elif num == 250:
-			self.ice += 250
-		elif num == 500:
-			self.ice += 500
-
-
-	def add_cups(self,num):
-		if num == 10:
-			self.cups += 10
-		elif num == 25:
-			self.cups += 25
-		elif num == 60:
-			self.cups += 60
-
-
-
-
-
+	def add_item(self,num,item):
+		if num <= 10:
+			if item == "lemons":
+				self.lemons += num
+			if item == "sugar":
+				self.sugar += num
+			if item == "cups":
+				self.cups += num
+			if item <= "ice":
+				self.ice += num*10	
+		elif num <= 25:
+			if item == "lemons":
+				self.lemons += num
+			if item == "sugar":
+				self.sugar += num
+			if item == "cups":
+				self.cups += num
+			if item <= "ice":
+				self.ice += num*10
+		elif num <= 60:
+			if item == "lemons":
+				self.lemons += num
+			if item == "sugar":
+				self.sugar += num
+			if item == "cups":
+				self.cups += num
+			if item <= "ice":
+				self.ice += num*10

@@ -19,7 +19,7 @@ def main():
 	while day < 7:
 		cash.show_status()
 		today.get_forecast()		
-		vendor.get_list_buy(supplies, cash, vendor)
+		vendor.show_list_buy(supplies, cash, vendor)
 		cash.show_status()		
 		lemonade.make_lemonade(supplies.lemons, supplies.sugar, supplies.ice, supplies.cups) 		
 		vendor.set_price()
