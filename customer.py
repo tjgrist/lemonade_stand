@@ -11,7 +11,7 @@ class Customer:
 		customers_out = 0		
 		if weather_score >= 85:
 			while customers_out < randint(35,48):
-				customer = Customer()
+				customer = Customer()				
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 		elif weather_score >= 70:
@@ -26,7 +26,7 @@ class Customer:
 				customers_out += 1
 		elif weather_score >= 40:
 			while customers_out < randint(8,12):
-				customer = Customer()
+				customer = Customer()				
 				customer.buy(price, cash, weather_score, supplies, vendor, lemonade)
 				customers_out += 1
 		
@@ -35,7 +35,7 @@ class Customer:
 		if lemonade.get_lemonades():
 			if weather_score >= 100 and self.chance >= 10 and price <= 4:
 				self.buy_accordingly(price, cash, lemonade)
-			elif weather_score >= 90 and self.chance >= 20 and price <= 3:
+			elif weather_score >= 90 and self.chance >= 20 and price <= 3.5:
 				self.buy_accordingly(price, cash, lemonade)
 			elif weather_score >= 80 and self.chance >= 30 and price <= 3: 
 				self.buy_accordingly(price, cash, lemonade)
@@ -51,7 +51,6 @@ class Customer:
 				print("Customer says:\n'Not buying today.'")
 		else: 
 			lemonade.show_status()
-			return False
 				
 
 	def buy_accordingly(self,price,cash,lemonade):
