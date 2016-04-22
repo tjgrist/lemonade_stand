@@ -56,3 +56,9 @@ class Supplies:
 				self.cups += num
 			if item == "ice":
 				self.ice += num*10
+
+	def subtract_all_supplies(self):
+		self.lemons = 0
+		self.sugar = 0
+		self.ice = 0
+		self.cups = 0

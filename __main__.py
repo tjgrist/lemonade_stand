@@ -14,9 +14,10 @@ customer = Customer()
 
 
 def main():
-	weekdays = today.get_weekday_list()
 	day = 0
-	while day < 7:
+	play_time = today.get_play_duration()
+	weekdays = today.get_weekday_list(play_time)
+	while day < play_time:
 		cash.show_status()
 		today.get_forecast()		
 		vendor.show_list_buy(supplies, cash, vendor)
@@ -26,14 +27,13 @@ def main():
 		customer.get_customers(vendor.price, cash, today.weather_score, supplies, vendor, lemonade)
 		supplies.subtract_supplies(lemonade.sold_lemonade())
 		cash.show_earnings()
-		day += 1
 		for each_day in weekdays:
-			print("It's a new day! Today is {}.".format(weekdays[+1]))
 			weekdays.remove(weekdays[0])
+			print("Today is {}.".format(weekdays[0]))
 			break
+		day += 1
 	print("\nGood selling!\n")
 
 
 if __name__ == "__main__":
 	main()
-

@@ -30,6 +30,15 @@ class Weather:
 		print("\nToday's forecast:",self.get_temp(),"and",self.get_cloudiness())
 
 
-	def get_weekday_list(self):
-		weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Monday, but the week is over"]
+	def get_weekday_list(self,days):
+		weekdays = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]*days
 		return weekdays
+
+
+	def get_play_duration(self):
+		play_time = input("For how many weeks would you like to play? ")
+		try:
+			int(play_time)
+			return int(play_time)*7
+		except: 
+			return self.get_play_duration()
