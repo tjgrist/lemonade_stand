@@ -36,7 +36,7 @@ class Supplies:
 				self.sugar += num
 			if item == "cups":
 				self.cups += num
-			if item <= "ice":
+			if item == "ice":
 				self.ice += num*10	
 		elif num <= 25:
 			if item == "lemons":
@@ -45,7 +45,7 @@ class Supplies:
 				self.sugar += num
 			if item == "cups":
 				self.cups += num
-			if item <= "ice":
+			if item == "ice":
 				self.ice += num*10
 		elif num <= 60:
 			if item == "lemons":
@@ -54,5 +54,5 @@ class Supplies:
 				self.sugar += num
 			if item == "cups":
 				self.cups += num
-			if item <= "ice":
+			if item == "ice":
 				self.ice += num*10

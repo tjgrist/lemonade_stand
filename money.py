@@ -10,7 +10,7 @@ class Money:
 		print("\nCash in hand: ${}".format(self.dollars))
 		print("\n*TOTAL profits*: ${}\n".format(self.get_profits(self.dollars)))
 		print("Good luck tomorrow.")
-		print("___________________________________________________________\n")
+		print("_____________________________________________________\n")
 	
 
 	def show_status(self):

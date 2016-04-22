@@ -35,12 +35,12 @@ class Lemonade:
 			return False
 
 
-	def get_status(self):
+	def show_status(self):
 		print("You sold out!")
 
 
 	def sold_lemonade(self):
 		sold = self.starting_drinks - self.drinks
-		print("_______________________________________________________")
+		print("_____________________________________________")
 		print("\nYou sold: {} lemonades today.".format(sold))
 		return sold

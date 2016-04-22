@@ -25,7 +25,6 @@ class Vendor:
 					supplies.add_item(quantity,each)
 			except:
 				print("\nOops. Try entering a numeric value.")
-				self.purchase_ingredients(cash,supplies)
 
 
 	def set_price(self):
