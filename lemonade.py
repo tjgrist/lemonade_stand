@@ -8,7 +8,7 @@ class Lemonade:
 		
 
 	def make_lemonade(self,lemons,sugar,ice,cups):
-		glasses = int((lemons + sugar + ice)/5)
+		glasses = (lemons + sugar + ice)/5
 		extra_lemonade =  glasses - cups
 		self.drinks = glasses - extra_lemonade
 		self.starting_drinks = self.drinks
@@ -44,3 +44,10 @@ class Lemonade:
 		print("_____________________________________________")
 		print("\nYou sold: {} lemonades today.".format(sold))
 		return sold
+
+	# def change_recipe(self):
+	# 	print("If a pitcher is about 12 glasses of lemonade, how many of each ingredient do you want in your lemonade?")
+	# 	lemons = int(input("Lemons: "))
+	# 	sugar = int(input("Sugar: "))
+	# 	ice = int(input("Ice: "))
+	# 	return lemons
